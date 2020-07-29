@@ -1,8 +1,37 @@
+{% load static %}
+<html>
+    <head>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+		<link href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+		<title>Django Girls blog</title>
+    </head>
+    <body>
+        <div>
+            <h1><a href="/">Django Girls Blog</a></h1>
+        </div>
+
+        {% for post in posts %}
+            <div>
+                <p>published: {{ post.published_date }}</p>
+                <h2><a href="">{{ post.title }}</a></h2>
+                <p>{{ post.text|linebreaksbr }}</p>
+            </div>
+        {% endfor %}
+    </body>
+</html>
+
+<!--
+
+{% load static %}
 <html>
     <head>
 			<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
 			<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
-        <title>Django Girls blog</title>
+			<link rel="stylesheet" href="{% static 'css/blog.css' %}">
+		<title>Django Girls blog</title>
     </head>
     <body>
         <div>
@@ -31,8 +60,10 @@
 		
 		<div>
             <p>published: 14.06.2014, 12:14</p>
-            <h2><a href="">BRUH I AM OCNFUSED</a></h2>
+            <h2><a href="">BRUH I AM OCNFUSED3X</a></h2>
             <p>YEEEEEEEEEEEEEEEEEE2</p>
         </div>
     </body>
 </html>
+
+-->
